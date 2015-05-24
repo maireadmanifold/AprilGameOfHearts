@@ -113,7 +113,7 @@ public class GameOfHearts
 
 
 	public void playCards() {
-		//int test = 0;
+
 		while (cp1.hand.hasCardsLeft() && cp2.hand.hasCardsLeft() && cp3.hand.hasCardsLeft() && me.hand.hasCardsLeft()) {
 
 			if(firstRoundFlag){
@@ -278,8 +278,7 @@ public class GameOfHearts
 						System.out.println();
 						pause.nextLine();
 					}
-					firstPlayer = -1;// resetting. We need this so firstPlayer is chosen by winner of last round.
-					
+					firstPlayer = -1;// resetting. We need this so firstPlayer is chosen by winner of last round.  
 				}// end of playing card based on first round or not and taking cards of correct players. 
 			}// end of while checking table array for all 4 cards played
 
@@ -287,9 +286,6 @@ public class GameOfHearts
 			System.out.println();
 			System.out.println("Trick finished");
 			System.out.println();
-			
-			//test++;
-			//if (test == 4) System.exit(0);
 
 		}// checking that all players have cards left to play a card
 
@@ -304,30 +300,29 @@ public class GameOfHearts
 		//checking which card on table is the winner of the round
 		for(int i = 0; i<4; i++){ 
 			if (table[i].getSuit()==trump){
-				if(table[i].getValue() >= table[0].getValue() && table[i].getValue() >= table[1].getValue() && table[i].getValue() >= table[2].getValue()&& table[i].getValue() >= table[3].getValue())
-					tablePositionWinner = i;	
-			}// end of for loop that check who has won round
+				if((table[i].getValue() <= table[0].getValue()) && (table[i].getValue() <= table[1].getValue()) && (table[i].getValue() <= table[2].getValue()) && (table[i].getValue() <= table[3].getValue()))
+					tablePositionWinner = i;
+			}
+		}// end of for loop that check who has won round
 
+			// *** Test
+			System.out.println("tablePositionWinner =" + tablePositionWinner);
+			
+		//calculate penalties in round by looping through all 4 cards on table and awards them to loosing player
 
-			//calculate penalties in round by looping through all 4 cards on table and awards them to loosing player
-
-			for(int k = 0; k<4; k++){
-				if(table[k].getSuit()==1){ // is hearts - get a point for each heart
+		for(int k = 0; k<4; k++){
+				if(table[k].getSuit()==1)// is hearts - get a point for each heart
 					System.out.println("One penalty added for a heart found in round");
-					roundPenalties++;
-				}
-
-				if(table[k].getSuit()==0 && table[k].getValue()==12){// if Queen of Spades present - get 13 points 
+				roundPenalties++;
+				if(table[k].getSuit()==0 && table[k].getValue()==12)// if Queen of Spades present - get 13 points 
 					System.out.println("13 penalty points added for Queen of Spades found in round");
-					roundPenalties = roundPenalties+13; 
-				}	
-			}// end of for loop going through all 4 cards on table
+				roundPenalties = roundPenalties+13; 
+		}// end of for loop going through all 4 cards on table
+			
+			// *** Test
+			System.out.println("roundPenalties =" + roundPenalties);
 
-			System.out.println();
-			System.out.println("Penalty points for this round is: "+roundPenalties);
-			System.out.println();
-
-		}//end of checking played cards on table for winning card and calculating penalty points associated with win
+		//}//end of checking played cards on table for winning card and calculating penalty points associated with win
 
 		if(tablePositionWinner == 0)
 		{
@@ -373,7 +368,7 @@ public class GameOfHearts
 			System.out.println("CP3");
 		else if (tablePositionWinner ==3)
 			System.out.println("I won");
-
+		
 		System.out.println();
 		firstPlayer = tablePositionWinner;
 		tablePositionWinner = -1; //resetting for next round
@@ -385,9 +380,6 @@ public class GameOfHearts
 			System.out.println("Ready for next round: table"+k+" "+table[k]);
 			System.out.println();
 		}
-
-
-
 	}// end of checkRoundResults
 
 
@@ -398,6 +390,10 @@ public class GameOfHearts
 
 
 }// end of class
+
+
+
+
 
 
 
