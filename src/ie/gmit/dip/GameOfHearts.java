@@ -52,9 +52,6 @@ public class GameOfHearts
 			goh.dealCards();
 			goh.pass3Cards();
 			goh.playCards();
-			System.out.println("Exiting at cRR");
-			System.exit(0);
-			//goh.checkRoundResults();
 			goh.checkGameResults();
 		}
 	}
@@ -172,7 +169,7 @@ public class GameOfHearts
 						System.out.print("Press any key to continue . . . ");
 						pause.nextLine();
 					}
-					firstRoundFlag = false;
+
 
 				}else{
 					System.out.println("Starting new round");
@@ -181,7 +178,7 @@ public class GameOfHearts
 					{
 
 						table[1] = cp2.playCard(trump, heartsPlayed, firstRoundFlag);//cp2's turn goes after cp1
-						
+
 						nextPlayer=2;
 
 						System.out.println("CP2 has played a card");
@@ -289,6 +286,7 @@ public class GameOfHearts
 					}
 					firstPlayer = -1;// resetting. We need this so firstPlayer is chosen by winner of last round.  
 				}// end of playing card based on first round or not and taking cards of correct players. 
+				firstRoundFlag = false;
 			}// end of while checking table array for all 4 cards played
 
 			checkRoundResults();
@@ -314,22 +312,22 @@ public class GameOfHearts
 			}
 		}// end of for loop that check who has won round
 
-			// *** Test
-			System.out.println("tablePositionWinner =" + tablePositionWinner);
-			
+		// *** Test
+		System.out.println("tablePositionWinner =" + tablePositionWinner);
+
 		//calculate penalties in round by looping through all 4 cards on table and awards them to loosing player
 
 		for(int k = 0; k<4; k++){
-				if(table[k].getSuit()==1)// is hearts - get a point for each heart
-					System.out.println("One penalty added for a heart found in round");
-				roundPenalties++;
-				if(table[k].getSuit()==0 && table[k].getValue()==12)// if Queen of Spades present - get 13 points 
-					System.out.println("13 penalty points added for Queen of Spades found in round");
-				roundPenalties = roundPenalties+13; 
+			if(table[k].getSuit()==1)// is hearts - get a point for each heart
+				System.out.println("One penalty added for a heart found in round");
+			roundPenalties++;
+			if(table[k].getSuit()==0 && table[k].getValue()==12)// if Queen of Spades present - get 13 points 
+				System.out.println("13 penalty points added for Queen of Spades found in round");
+			roundPenalties = roundPenalties+13; 
 		}// end of for loop going through all 4 cards on table
-			
-			// *** Test
-			System.out.println("roundPenalties =" + roundPenalties);
+
+		// *** Test
+		System.out.println("roundPenalties =" + roundPenalties);
 
 		//}//end of checking played cards on table for winning card and calculating penalty points associated with win
 
@@ -377,7 +375,7 @@ public class GameOfHearts
 			System.out.println("CP3");
 		else if (tablePositionWinner ==3)
 			System.out.println("I won");
-		
+
 		System.out.println();
 		firstPlayer = tablePositionWinner;
 		tablePositionWinner = -1; //resetting for next round
@@ -393,12 +391,29 @@ public class GameOfHearts
 
 
 	private void checkGameResults() {
-		//to do
 
-	}
+		if ((cp1.getPenalties()>100) || (cp2.getPenalties()>100) || (cp3.getPenalties()<100) && (me.getPenalties()>100)){
+			if ((cp1.getPenalties()<cp2.getPenalties()) && (cp1.getPenalties()<cp3.getPenalties()) && (cp1.getPenalties() < me.getPenalties())){
+				System.out.println("The winner of the game is CP1 ");
+			}
+			else if ((cp2.getPenalties()<cp1.getPenalties()) && (cp2.getPenalties()<cp3.getPenalties()) && (cp2.getPenalties() < me.getPenalties())){
+				System.out.println("The winner of the game is CP2 ");
+			}
+			else if ((cp3.getPenalties()<cp1.getPenalties()) && (cp3.getPenalties()<cp2.getPenalties()) && (cp3.getPenalties() < me.getPenalties())){
+				System.out.println("The winner of the game is CP3 ");
+			}
+			else if ((me.getPenalties()<cp1.getPenalties()) && (me.getPenalties()<cp2.getPenalties()) && (me.getPenalties() < cp3.getPenalties())){
+				System.out.println("The winner of the game is me -- whow!!! ");
+			}
+			System.out.println("Exiting game as game is over");
+			System.exit(0);
+		}// end of if any of the penalties are > 100
 
 
-}// end of class
+	}// end of checkGameResults
+
+
+}// end of Game of Hearts class
 
 
 
