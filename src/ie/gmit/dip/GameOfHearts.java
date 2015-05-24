@@ -309,7 +309,7 @@ public class GameOfHearts
 		//checking which card on table is the winner of the round
 		for(int i = 0; i<4; i++){ 
 			if (table[i].getSuit()==trump){
-				if((table[i].getValue() <= table[0].getValue()) && (table[i].getValue() <= table[1].getValue()) && (table[i].getValue() <= table[2].getValue()) && (table[i].getValue() <= table[3].getValue()))
+				if((table[i].getValue() >= table[0].getValue()) && (table[i].getValue() >= table[1].getValue()) && (table[i].getValue() >= table[2].getValue()) && (table[i].getValue() >= table[3].getValue()))
 					tablePositionWinner = i;
 			}
 		}// end of for loop that check who has won round
