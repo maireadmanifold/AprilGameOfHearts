@@ -187,7 +187,7 @@ public class GameOfHearts
 						System.out.println("CP2 has played a card");
 						System.out.println("CP2 has played: "+table[1]);
 						trump = table[1].getSuit();
-						System.out.println("The suit is now"+table[1].getSuitAsString(trump));
+						System.out.println("The suit is now: "+table[1].getSuitAsString(trump));
 						System.out.print("Press any key to continue . . . ");
 						System.out.println();
 						pause.nextLine();
@@ -202,7 +202,7 @@ public class GameOfHearts
 						System.out.println("CP3 has played a card");
 						System.out.println("CP3 has played: "+table[2]);
 						trump = table[2].getSuit();
-						System.out.println("The suit is now"+table[2].getSuitAsString(trump));
+						System.out.println("The suit is now: "+table[2].getSuitAsString(trump));
 						System.out.print("Press any key to continue . . . ");
 						System.out.println();
 						pause.nextLine();
@@ -217,7 +217,7 @@ public class GameOfHearts
 						System.out.println("I have played a card");
 						System.out.println("I have played: "+table[3]);
 						trump = table[3].getSuit();
-						System.out.println("The suit is now"+table[3].getSuitAsString(trump));
+						System.out.println("The suit is now: "+table[3].getSuitAsString(trump));
 						System.out.print("Press any key to continue . . . ");
 						System.out.println();
 						pause.nextLine();
@@ -232,7 +232,7 @@ public class GameOfHearts
 						System.out.println("CP1 has played a card");
 						System.out.println("CP1 has played: "+table[0]);
 						trump = table[0].getSuit();
-						System.out.println("The suit is now"+table[0].getSuitAsString(trump));
+						System.out.println("The suit is now: "+table[0].getSuitAsString(trump));
 						System.out.print("Press any key to continue . . . ");
 						System.out.println();
 						pause.nextLine();
@@ -269,7 +269,7 @@ public class GameOfHearts
 						nextPlayer=4;
 
 						System.out.println();
-						System.out.println("me has played a card");
+						System.out.println("I have played a card");
 						System.out.println("I have played: "+table[3]);
 						System.out.print("Press any key to continue . . . ");
 						System.out.println();

@@ -38,7 +38,7 @@ public class HumanPlayer {
 		System.out.println("Please note that trumps are " + cardCP.getSuitAsString(trump));
 		System.out.println();
 		
-		System.out.print("Press any key to view the cards in your hand: ");
+		System.out.println("Press any key to view the cards in your hand... ");
 		input.nextLine();		
 
 		System.out.println();
