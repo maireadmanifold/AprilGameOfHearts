@@ -124,6 +124,9 @@ public class HumanPlayer {
 			System.out.println("Your cards are: ");
 			
 			System.out.println();
+			System.out.print("Press any key to display all your cards . . . ");
+			System.out.println();
+			input.nextLine();
 			hand.printHand();
 			System.out.println();
 
