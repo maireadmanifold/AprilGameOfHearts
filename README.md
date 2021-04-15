@@ -1,6 +1,6 @@
 Game of Cards Design Document
 
-Mairead Manifold, Student Id: G00294426, GMIT, Galway -  Summer 2015
+Mairead Manifold, Summer 2015
 
 The following are the classes used in the project:
     HumanPlayer
