@@ -3,12 +3,12 @@ Game of Cards Design Document
 Mairead Manifold, Summer 2015
 
 The following are the classes used in the project:
-    * HumanPlayer
-    * ComputerPlayer
-    * Card
-    * Deck
-    * Hands
-    * GameOfHearts
+    - HumanPlayer
+    - ComputerPlayer
+    - Card
+    - Deck
+    - Hands
+    - GameOfHearts
 
 The GameOfHearts is the runner class for the project. It is where main resides. 
 
