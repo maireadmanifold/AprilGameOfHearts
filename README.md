@@ -3,23 +3,23 @@ Game of Cards Design Document
 Mairead Manifold, Summer 2015
 
 The following are the classes used in the project:
-    HumanPlayer
-    ComputerPlayer
-    Card
-    Deck
-    Hands
-    GameOfHearts
+    * HumanPlayer
+    * ComputerPlayer
+    * Card
+    * Deck
+    * Hands
+    * GameOfHearts
 
 The GameOfHearts is the runner class for the project. It is where main resides. 
 
 The class GameOfHearts' main dictates the order of activity in the game:
-    dealCards
-    pass3Cards
-    playCards
-    checkRoundResults
-    checkGameResults
+    * dealCards
+    * pass3Cards
+    * playCards
+    * checkRoundResults
+    * checkGameResults
 
-Following is an explanation of each of these activities. 
+Following is an explanation of functions: 
 
 dealCards()
     This method creates an instance of the deck class and uses a shuffle method to shuffle the cards in the new deck and then the program deals 13 cards to each player; using the following names for the computer players: cp1, cp2, cp3 and and using the name 'me' for the human player. 
